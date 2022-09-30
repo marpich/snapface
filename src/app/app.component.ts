@@ -7,31 +7,33 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  mySnap!: FaceSnap;
-  myOtherSnap!: FaceSnap;
-  myLastSnap!: FaceSnap;
+  faceSnaps!: FaceSnap[];
 
   ngOnInit() {
-    this.mySnap = new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit !',
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-      new Date(),
-      0
-    );
-    this.myOtherSnap = new FaceSnap(
-      'Ourson',
-      'Belle peluche',
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-      new Date(),
-      20
-    );
-    this.myLastSnap = new FaceSnap(
-      'Le Petit Prince',
-      'Antoine de Saint-Exupéry ',
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-      new Date(),
-      50
-    );
+    this.faceSnaps = [
+      {
+      title: 'Archibald',
+      description: 'Mon meilleur ami depuis tout petit !',
+      imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+      createdDate: new Date(),
+      snaps: 0,
+      location: 'Nantes',
+      },
+      {
+      title: 'Ourson',
+      description: 'Belle peluche',
+      imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+      createdDate: new Date(),
+      snaps: 20,
+      location: 'Paris',
+      },
+      {
+      title: 'Le Petit Prince',
+      description: 'Antoine de Saint-Exupéry ',
+      imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+      createdDate: new Date(),
+      snaps: 50,
+      },
+    ]
   }
 }
